@@ -55,7 +55,7 @@ const Signup = () => {
                   type="text"
                   className="form-control"
                   value={name}
-                  required="true"
+                  required={true}
                   onChange={(e) => setName(e.target.value)}
                   id="exampleInputname"
                 />
@@ -69,7 +69,7 @@ const Signup = () => {
                   className="form-control"
                   id="exampleInputEmail1"
                   value={email}
-                  required="true"
+                  required={true}
                   onChange={(e) => setEmail(e.target.value)}
                   aria-describedby="emailHelp"
                 />
@@ -82,7 +82,7 @@ const Signup = () => {
                   type="password"
                   className="form-control"
                   value={password}
-                  required="true"
+                  required={true}
                   onChange={(e) => setPassword(e.target.value)}
                   id="exampleInputPassword1"
                 />
@@ -95,7 +95,7 @@ const Signup = () => {
                   type="password"
                   className="form-control"
                   value={cpassword}
-                  required="true"
+                  required={true}
                   onChange={(e) => setCpassword(e.target.value)}
                   id="exampleInputPassword2"
                 />

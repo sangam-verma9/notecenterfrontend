@@ -18,7 +18,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/users/login",
+      "https://notecenter.onrender.com/api/users/login",
       { email, password },
       config
     );
@@ -48,7 +48,7 @@ export const registration =
         },
       };
       const { data } = await axios.post(
-        "/api/users/register",
+        "https://notecenter.onrender.com/api/users/register",
         { name, email, password },
         config
       );

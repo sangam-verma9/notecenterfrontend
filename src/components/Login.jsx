@@ -39,7 +39,7 @@ const Login = () => {
                   className="form-control"
                   id="exampleInputEmail1"
                   value={email}
-                  required="true"
+                  required={true}
                   aria-describedby="emailHelp"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -52,7 +52,7 @@ const Login = () => {
                   type="password"
                   className="form-control"
                   value={password}
-                  required="true"
+                  required={true}
                   id="exampleInputPassword1"
                   onChange={(e) => setPassword(e.target.value)}
                 />

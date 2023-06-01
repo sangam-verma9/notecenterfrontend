@@ -37,7 +37,7 @@ export const createnote = (title, category, content) => async (dispatch) => {
       },
     };
     const { data } = await axios.post(
-      "/api/notes/create",
+      "https://notecenter.onrender.com/api/notes/create",
       {
         title,
         category,
@@ -67,7 +67,7 @@ export const updatenote =
         },
       };
       const { data } = await axios.put(
-        `/api/notes/${id}`,
+        `https://notecenter.onrender.com/api/notes/${id}`,
         {
           title,
           category,
@@ -91,7 +91,9 @@ export const updatenote =
 export const deletenote = (id) => async (dispatch) => {
   try {
     dispatch({ type: NOTE_DELETE_REQUEST });
-    const note = await axios.delete(`/api/notes/${id}`);
+    const note = await axios.delete(
+      `https://notecenter.onrender.com/api/notes/${id}`
+    );
     window.location.reload();
 
     dispatch({ type: NOTE_DELETE_SUCCESS, payload: note });
