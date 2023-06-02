@@ -16,7 +16,9 @@ import {
 export const noteslist = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_NOTE_REQUEST });
-    const { data } = await axios.get("/api/notes");
+    const { data } = await axios.get(
+      "https://notecenter.onrender.com/api/notes"
+    );
     dispatch({ type: ALL_NOTE_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
