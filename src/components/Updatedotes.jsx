@@ -24,7 +24,7 @@ const Updatedotes = () => {
   };
   useEffect(() => {
     const fetching = async () => {
-      const { data } = await axios.get(`/api/notes/${params.id}`);
+      const { data } = await axios.get(`https://notecenter.onrender.com/api/notes/${params.id}`);
       setTitle(data.title);
       setCategory(data.category);
       setContent(data.content);
