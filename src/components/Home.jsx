@@ -48,22 +48,29 @@ const Home = () => {
               </h3>
             </div>
             <div className="container text-center ">
-              <button className="btn btn-outline-success m-4">
-                <Link
-                  to="login"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  <b>Login</b>
-                </Link>
-              </button>
-              <button className="btn btn-outline-warning m-4">
-                <Link
-                  to="register"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  <b>Signup</b>
-                </Link>
-              </button>
+              {
+                userInfo?
+                <>
+                  <button className="btn btn-outline-success m-4">
+                    <Link
+                      to="login"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <b>Login</b>
+                    </Link>
+                  </button>
+                  <button className="btn btn-outline-warning m-4">
+                    <Link
+                      to="register"
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <b>Signup</b>
+                    </Link>
+                  </button>
+                </>
+                :
+                <> </>
+              }
             </div>
           </div>
           <div className="col-md-6 col-sm-12 d-flex justify-content-center align-items-center p-3 ">
