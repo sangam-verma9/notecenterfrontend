@@ -19,10 +19,14 @@ export const noteslist = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_NOTE_REQUEST });
     const userInfo =localStorage.getItem("userInfo");
+    let userData ="";
+    if (userInfo) {
+      userData = JSON.parse(userInfo)
+    }
 
     const config = {
       headers: {
-        Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userData.token}`,
       },
     };
     const { data } = await axios.get(
@@ -43,11 +47,15 @@ export const createnote = (title, category, content) => async (dispatch) => {
   try {
     dispatch({ type: NOTE_CREATE_REQUEST });
     const userInfo =localStorage.getItem("userInfo");
+    let userData ="";
+    if (userInfo) {
+      userData = JSON.parse(userInfo)
+    }
 
     const config = {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${userInfo.token}`,
+        Authorization: `Bearer ${userData.token}`,
       },
     };
     const { data } = await axios.post(
