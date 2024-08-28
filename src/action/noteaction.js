@@ -13,11 +13,22 @@ import {
   NOTE_DELETE_REQUEST,
   NOTE_DELETE_SUCCESS,
 } from "../constants/noteconstants";
+
+
 export const noteslist = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_NOTE_REQUEST });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
     const { data } = await axios.get(
-      "https://notecenter.onrender.com/api/notes"
+      "https://notecenter.onrender.com/api/notes",config
     );
     dispatch({ type: ALL_NOTE_SUCCESS, payload: data });
   } catch (error) {
@@ -33,9 +44,14 @@ export const noteslist = () => async (dispatch) => {
 export const createnote = (title, category, content) => async (dispatch) => {
   try {
     dispatch({ type: NOTE_CREATE_REQUEST });
+    const {
+      userLogin: { userInfo },
+    } = getState();
+
     const config = {
       headers: {
-        "content-type": "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
       },
     };
     const { data } = await axios.post(
