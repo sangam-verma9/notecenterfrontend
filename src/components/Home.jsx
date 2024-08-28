@@ -51,7 +51,9 @@ const Home = () => {
               {
                 userInfo?
                 <>
-                  <button className="btn btn-outline-success m-4">
+                </>
+                :
+                <> <button className="btn btn-outline-success m-4">
                     <Link
                       to="login"
                       style={{ textDecoration: "none", color: "black" }}
@@ -67,9 +69,7 @@ const Home = () => {
                       <b>Signup</b>
                     </Link>
                   </button>
-                </>
-                :
-                <> </>
+                  </>
               }
             </div>
           </div>
