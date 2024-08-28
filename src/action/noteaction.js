@@ -18,9 +18,7 @@ import {
 export const noteslist = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_NOTE_REQUEST });
-    const {
-      userLogin: { userInfo },
-    } = getState();
+    const userInfo =localStorage.getItem("userInfo");
 
     const config = {
       headers: {
@@ -44,9 +42,7 @@ export const noteslist = () => async (dispatch) => {
 export const createnote = (title, category, content) => async (dispatch) => {
   try {
     dispatch({ type: NOTE_CREATE_REQUEST });
-    const {
-      userLogin: { userInfo },
-    } = getState();
+    const userInfo =localStorage.getItem("userInfo");
 
     const config = {
       headers: {
